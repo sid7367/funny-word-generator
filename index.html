@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
 
         .container {
@@ -21,6 +22,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
         }
 
         .fact-box {
@@ -28,6 +30,7 @@
             padding: 10px;
             background-color: #e0e0e0;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         button {
@@ -38,16 +41,42 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         button:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .image-container {
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 100px;
+            height: auto;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Fun Fact Generator</h1>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/100" alt="Fun Image">
+        </div>
         <div id="fact" class="fact-box">Click the button to see a fun fact!</div>
         <button id="generateFact">Generate Fact</button>
     </div>
@@ -68,6 +97,10 @@
         document.getElementById('generateFact').addEventListener('click', function() {
             const randomIndex = Math.floor(Math.random() * facts.length);
             document.getElementById('fact').textContent = facts[randomIndex];
+            document.querySelector('.fact-box').style.backgroundColor = '#d0d0d0';
+            setTimeout(() => {
+                document.querySelector('.fact-box').style.backgroundColor = '#e0e0e0';
+            }, 300);
         });
     </script>
 </body>
