@@ -7,29 +7,50 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-image: "sky_image.webp";
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            animation: backgroundTransition 10s infinite alternate;
+            /* animation: backgroundTransition 10s infinite alternate; */
         }
 
-        @keyframes backgroundTransition {
-            0% { background-color: #f0f0f0; }
-            50% { background-color: #e0f7fa; }
-            100% { background-color: #f0f0f0; }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            background-size: cover;
         }
+/* 
+        @keyframes backgroundTransition {
+            0% { background-color: #ce93c9; }
+            25% { background-color: #58daeb; }
+            50% { background-color: #85ef61; }
+            75% { background-color: greenyellow; }
+            100% { background-color: burlywood; }
+        } */
 
         .container {
             text-align: center;
-            background-color: #fff;
-            padding: 20px;
+            background-image: rgba(255, 255, 255, 0.2);
+            padding: 100px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             animation: fadeIn 1s ease-in-out;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .container:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Slightly less transparent on hover */
+            transform: scale(1.05); /* Slightly enlarges the container on hover */
         }
 
         .fact-box {
@@ -79,6 +100,10 @@
     </style>
 </head>
 <body>
+    <video autoplay muted loop>
+        <source src="flowers.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <div class="container">
         <h1>Fun Fact Generator</h1>
         <div class="image-container">
