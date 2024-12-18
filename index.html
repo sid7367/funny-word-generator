@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun Fact Generator</title>
     <style>
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        h1 {
+            animation: slideIn 1s ease-out;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
         body {
             font-family: Arial, sans-serif;
-            background-image: "sky_image.webp";
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,14 +39,6 @@
             transform: translate(-50%, -50%);
             background-size: cover;
         }
-/* 
-        @keyframes backgroundTransition {
-            0% { background-color: #ce93c9; }
-            25% { background-color: #58daeb; }
-            50% { background-color: #85ef61; }
-            75% { background-color: greenyellow; }
-            100% { background-color: burlywood; }
-        } */
 
         .container {
             text-align: center;
@@ -56,7 +58,7 @@
         .fact-box {
             margin: 20px 0;
             padding: 10px;
-            background-color: #e0e0e0;
+            background-image: linear-gradient(to right,#E7CCCC,#EDE8DC,#A5B68D,#C1CFA1) ;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
@@ -83,19 +85,24 @@
         }
 
         .image-container {
-            margin: 20px 0;
-        }
+            margin-top: 80px;
+            margin-bottom: 5px;
 
+        }
+        
         .image-container img {
-            width: 100px;
+            width: 200px;
             height: auto;
-            animation: bounce 2s infinite;
+            animation: wobble 2s infinite;
         }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
+        
+        @keyframes wobble {
+        0%, 100% { transform: translateX(0%); }
+        15% { transform: translateX(-25%) rotate(-5deg); }
+        30% { transform: translateX(20%) rotate(3deg); }
+        45% { transform: translateX(-15%) rotate(-3deg); }
+        60% { transform: translateX(10%) rotate(2deg); }
+        75% { transform: translateX(-5%) rotate(-1deg); }
         }
     </style>
 </head>
@@ -114,16 +121,16 @@
     </div>
     <script>
         const facts = [
-            "Honey never spoils.",
-            "Bananas are berries, but strawberries aren't.",
+            "Honey🍯 never spoils.",
+            "Bananas 🍌 are berries, but strawberries 🍓 aren't.",
             "A day on Venus is longer than a year on Venus.",
-            "Octopuses have three hearts.",
-            "The Eiffel Tower can be 15 cm taller during the summer.",
-            "Some cats are allergic to humans.",
-            "A group of flamingos is called a 'flamboyance'.",
-            "The unicorn is the national animal of Scotland.",
-            "There are more stars in the universe than grains of sand on Earth.",
-            "Wombat poop is cube-shaped."
+            "Octopuses🐙 have 3️⃣ hearts💗.",
+            "The Eiffel 🗼 Tower can be 15 cm taller during the summer.",
+            "Some cats 🐈 are allergic to humans.",
+            "A group of flamingos🦩 is called a 'flamboyance'.",
+            "The unicorn 🦄 is the national animal of Scotland.",
+            "There are more stars ✨ in the universe 🌌 than grains 🌾 of sand on Earth 🌍.",
+            "Wombat poop 💩 is cube-shaped."
         ];
 
         document.getElementById('generateFact').addEventListener('click', function() {
