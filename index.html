@@ -111,6 +111,7 @@
         <source src="flowers.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    <audio id="clickSound" src="confetti-pop-sound-effect.mp3" preload="auto"></audio>
     <div class="container">
         <h1>Fun Fact Generator</h1>
         <div class="image-container">
@@ -119,6 +120,7 @@
         <div id="fact" class="fact-box">Click the button to see a fun fact!</div>
         <button id="generateFact">Generate Fact</button>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script>
         const facts = [
             "Honey🍯 never spoils.",
@@ -134,6 +136,18 @@
         ];
 
         document.getElementById('generateFact').addEventListener('click', function() {
+            const sound = document.getElementById('clickSound');
+            sound.play();
+            confetti({
+                particleCount: 300,
+                startVelocity: 30,
+                spread: 500,
+                origin: { x: 0.5, y: 0.5 },
+                colors: ['#ff0', '#0f0', '#00f', '#f00'],
+                shapes: ['circle', 'square'],
+                gravity: 0.5,   
+                decay: 0.9
+            });
             const randomIndex = Math.floor(Math.random() * facts.length);
             document.getElementById('fact').textContent = facts[randomIndex];
             document.querySelector('.fact-box').style.backgroundColor = '#d0d0d0';
