@@ -11,7 +11,8 @@ Welcome to the Fun Fact Generator! This web application displays random fun fact
 
 ## Demo
 
-![image](https://github.com/user-attachments/assets/3b7a9d5d-b33c-46c5-8454-bc09ff41cdb8)
+![image](https://github.com/user-attachments/assets/22dc836a-b0bd-4118-83c7-82f90e5d0bc4)
+
 
 ## Installation
 
@@ -31,7 +32,7 @@ To run the Fun Fact Generator locally, follow these steps:
 ## Usage
 - Click the "Generate Fact" button to display a new fun fact.
 - Hover over the container to see the interactive hover effect.
-- Enjoy the dynamic background video or image.
+- Enjoy the dynamic background video 🎥 or image 📷.
 
 ## Customisation
 - **Background Video/Image**: Replace the video or image URL in the HTML file to customize background.
@@ -52,6 +53,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Acknowledgements
 - Background dynamic video from "Pixabay" on Pexels.
 - Confetti audio is from "https://creatorassets.com/a/confetti-pop-sound-effect"
-- Placeholder image is  🧽 ![SpongebobNflGIF](https://github.com/user-attachments/assets/d0d09878-01cd-4f06-b07f-81c33bebd51a).
+- Placeholder image is  🧽 ![SpongebobMemeGIF](https://github.com/user-attachments/assets/0bed5f4c-b54f-439d-b15d-a3fd32d815c7)
+
 
 
