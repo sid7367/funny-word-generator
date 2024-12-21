@@ -137,6 +137,7 @@
 
         document.getElementById('generateFact').addEventListener('click', function() {
             const sound = document.getElementById('clickSound');
+            sound.currentTime = 0;  
             sound.play();
             confetti({
                 particleCount: 300,
